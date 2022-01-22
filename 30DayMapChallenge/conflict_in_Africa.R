@@ -12,7 +12,7 @@ pacman::p_load(spData, spDataLarge, sf, tidyverse, janitor, ggrepel, viridis, hr
 ## shp file
 rm(list = ls())
 
-africa_geom <- world %>%                                     #world from sf package
+africa_geom <- world %>%                                     #world from spData package
   mutate(across(where(is.character),str_trim)) %>%          #remove  whitespace 
   dplyr::filter(continent == "Africa") %>%                  # africa only 
   rename(name = name_long) %>%                              #rename colname to match other dataset
